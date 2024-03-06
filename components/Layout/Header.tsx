@@ -118,9 +118,9 @@ const Header = () => {
 									<ul id="menu-primary-menu" className={`${styles.menu} menu`}>
 										<li
 											className={`${styles.menu_item} ${
-												path === "/" ? styles.active_nav : ""
+												path === "/home" ? styles.active_nav : ""
 											} menu-item current-menu-item`}>
-											<Link href={"/"}>Home</Link>
+											<Link href={"/home"}>Home</Link>
 										</li>
 										<li
 											className={`${styles.menu_item} ${

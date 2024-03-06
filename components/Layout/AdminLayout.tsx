@@ -122,11 +122,11 @@ const AdminLayout = ({
 
 				<NextLink
 					href={"/admin/investors"}
-					id={pathname.includes("/investors") ? styles.active : ""}
+					id={pathname!.includes("/investors") ? styles.active : ""}
 					className={`${styles.side_links} size_16 bold`}>
 					<Image
 						src={
-							pathname.includes("/investors")
+							pathname!.includes("/investors")
 								? dashboardIconSharp
 								: dashboardIconBlur
 						}
@@ -140,11 +140,11 @@ const AdminLayout = ({
 
 				<NextLink
 					href={"/admin/deposits"}
-					id={pathname.includes("/deposits") ? styles.active : ""}
+					id={pathname!.includes("/deposits") ? styles.active : ""}
 					className={`${styles.side_links} size_16 bold`}>
 					<Image
 						src={
-							pathname.includes("/deposits")
+							pathname!.includes("/deposits")
 								? transactionsIcons
 								: transactionsIcons
 						}
@@ -158,11 +158,11 @@ const AdminLayout = ({
 
 				<NextLink
 					href={"/admin/withdrawals"}
-					id={pathname.includes("/withdrawals") ? styles.active : ""}
+					id={pathname!.includes("/withdrawals") ? styles.active : ""}
 					className={`${styles.side_links} size_16 bold`}>
 					<Image
 						src={
-							pathname.includes("/withdrawals")
+							pathname!.includes("/withdrawals")
 								? withdrawalIcon
 								: withdrawalIcon
 						}
