@@ -91,7 +91,7 @@ export const metadata: Metadata = {
 	// authors: [{ name: "Seb" }, { name: "Josh", url: "https://nextjs.org" }],
 	creator: "Top metro investment",
 	publisher: "Top metro investment",
-	metadataBase: new URL(process.env.VERCEL_URL!),
+	// metadataBase: "https://vercel.com",
 	// formatDetection: {
 	//   email: false,
 	// 	address: false,

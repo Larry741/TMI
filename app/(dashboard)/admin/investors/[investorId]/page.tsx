@@ -8,11 +8,9 @@ import useFetcher from "@/hooks/use-Fetcher";
 import checkAdminAuthentication from "@/components/Hoc/AdminProtectedRoute";
 import AdminLayout from "@/components/Layout/AdminLayout";
 
-let INVESTOR_API_URL: string;
-
 const InvestorDetailPage = ({ params }: { params: { investorId: string } }) => {
 	const { data, error, isLoading } = useFetcher(
-		params.investorId ? `user/admin?userId=${params.investorId}` : ""
+		`user/admin?userId=${params.investorId}`
 	);
 	const [loading, setLoading] = useState<boolean>(true);
 
