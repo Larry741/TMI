@@ -1,5 +1,5 @@
 import { NextApiResponse } from "next";
-import { CustomReq } from "@/app/api/user/profile-upload";
+import { CustomReq } from "@/pages/api/user/profile-upload";
 import User from "@/server/models/User.mongo";
 import { verifyJWT } from "@/server/services/auth.services";
 import errorDispatcher from "@/utils/errorDispatcher";

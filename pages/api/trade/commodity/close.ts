@@ -3,7 +3,7 @@ import errorDispatcher from "@/utils/errorDispatcher";
 import successDispatcher from "@/utils/successDispatcher";
 import { NextApiResponse } from "next";
 import { genericAuth } from "@/server/middleware/auth";
-import { CustomReq } from "@/app/api/user/profile-upload";
+import { CustomReq } from "@/pages/api/user/profile-upload";
 import Commodity from "@/server/models/Commodity.mongo";
 import CommodityPayment from "@/server/models/CommodityPayment.mongo";
 

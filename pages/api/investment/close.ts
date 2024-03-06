@@ -3,7 +3,7 @@ import errorDispatcher from "@/utils/errorDispatcher";
 import successDispatcher from "@/utils/successDispatcher";
 import { NextApiResponse } from "next";
 import { genericAuth } from "@/server/middleware/auth";
-import { CustomReq } from "@/app/api/user/profile-upload";
+import { CustomReq } from "@/pages/api/user/profile-upload";
 import Investment from "@/server/models/Investment.mongo";
 import { CURRENCY_SYMBOLS, INVESTMENT_TYPES } from "@/utils/constants";
 import Activity from "@/server/models/Activities.mongo";
