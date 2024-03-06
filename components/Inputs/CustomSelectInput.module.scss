@@ -1,0 +1,137 @@
+.input_control {
+  width: 100%;
+  height: max-content;
+  // position: relative;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.7rem;
+}
+
+.invalid {
+  border-color: $error-outline--200 !important;
+}
+
+.focused {
+  border-color: $color-primary--600 !important;
+}
+
+.dropdownListInput {
+  height: $input-height-max;
+  width: 100%;
+  padding: 0 3rem 0 1rem;
+  border-radius: 8px;
+  font-size: $input-font-size;
+  outline: none;
+  transition: 0.2s ease;
+  background: white;
+  position: relative;
+  margin: 0;
+  list-style-type: none;
+  border-color: rgba(0, 0, 0, 0.12);
+  border-style: solid;
+  background-image: url("../../public/images/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: 96.5% 50%;
+
+  @include respond(max-width-phones-480) {
+    border-width: 1px;
+  }
+  @include respond(min-width-phones-480) {
+    border-width: 2px;
+  }
+
+  & > *:first-child {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  & li {
+    color: black;
+  }
+
+  & .display_list {
+    overflow: hidden;
+    width: 100%;
+    text-transform: capitalize;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.disabled {
+  background-color: $tertiary-bg-300 !important;
+}
+
+.input_error {
+  color: $color-text--600;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.dropdown_container {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  font-size: $input-font-size;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.12);
+  z-index: 200000;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  list-style: none;
+  padding: 0;
+
+  @include respond(max-width-phones-480) {
+    max-height: 20rem;
+  }
+  @include respond(min-width-phones-480) {
+    max-height: 25rem;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+  & li:not(:last-of-type) {
+    border-bottom: 0.1rem solid $outline-100;
+  }
+}
+
+.dropdown_li {
+  width: 100%;
+  padding: 0.3rem 0;
+  user-select: none;
+  font-size: $input-font-size;
+
+  & span {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  & span:hover {
+    background-color: $Primary-bg--25;
+  }
+}
+
+.empty_list {
+  padding: 1rem 0;
+}

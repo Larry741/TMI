@@ -1,0 +1,12 @@
+{
+  "crons": [
+    {
+      "path": "/api/investment/cron",
+      "schedule": "0 4 * * *"
+    },
+    {
+      "path": "/api/socket",
+      "schedule": "0 4 * * *"
+    }
+  ]
+}

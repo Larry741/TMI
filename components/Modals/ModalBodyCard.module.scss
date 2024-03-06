@@ -1,0 +1,643 @@
+.card {
+  color: var(--white);
+  background: var(--bg-dashboard);
+  border-radius: 0.8rem;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  gap: 2rem;
+
+  @include respond(max-width-phones-420) {
+    width: 95%;
+  }
+  @include respond(min-width-phones-420) {
+    width: 38rem;
+  }
+}
+
+.no_bg {
+  background-color: transparent !important;
+  padding: 0rem;
+}
+
+.smallWidth {
+  width: 35rem;
+}
+
+.midWidth {
+  width: 40rem;
+}
+
+.mediumWidth {
+  width: 45rem;
+}
+
+.maxWidth {
+  width: 60rem;
+}
+
+.x-max {
+  @include respond(max-width-phones-400) {
+    width: 100%;
+  }
+  @include respond(min-width-400-max-width-750) {
+    width: 40rem;
+  }
+  @include respond(min-width-tablet-750) {
+    width: 80rem;
+  }
+}
+
+.gap-20 {
+  gap: 1.6rem;
+}
+
+.gap-30 {
+  gap: 3rem;
+}
+
+.gap-35 {
+  gap: 3.5rem;
+}
+
+.header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: max-content;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  & .header_icon {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+  }
+
+  & .check_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: $primary-bg;
+    padding: 0.5rem;
+    border: none;
+    flex-shrink: 0;
+  }
+
+  & .return_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  & .close {
+    justify-self: end;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    color: white;
+  }
+
+  & .close_cta {
+    justify-self: flex-end;
+    display: flex;
+    align-items: center;
+    border: none;
+    background: transparent;
+    color: white;
+
+    & svg {
+      font-size: 2.3rem;
+    }
+  }
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content;
+  grid-auto-flow: row;
+  grid-auto-rows: max-content;
+  gap: 2.5rem;
+}
+
+.form_2rows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content;
+  grid-auto-flow: row;
+  grid-auto-rows: max-content;
+  column-gap: 1.5rem;
+  row-gap: 2rem;
+}
+
+.radio_input {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: max-content max-content;
+  align-content: center;
+  column-gap: 1rem;
+  row-gap: 1.5rem;
+
+  & .label {
+    grid-column: 1 / span 2;
+    transform: translateY(0.1rem);
+  }
+
+  & > .input_control {
+    transform: translateY(0.2rem);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    & input {
+      cursor: pointer;
+      width: 2rem;
+      height: 2rem;
+      margin: 0;
+    }
+  }
+}
+
+.verification_status {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: max-content max-content;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  align-items: center;
+}
+
+.anchor_tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: $color-primary--600;
+  color: white;
+  min-height: $button-height;
+  text-align: center;
+  padding: 0 1.6rem;
+  border-radius: 0.8rem;
+}
+
+.verify_modal_link {
+  width: 100% !important;
+  background-color: $color-primary--600 !important;
+  color: white !important;
+  text-align: center !important;
+}
+
+.link_span_2 {
+  grid-column: 1 / span 2;
+  display: flex;
+  justify-content: center;
+
+  & a,
+  & button {
+    width: 50%;
+    margin-top: 1rem;
+  }
+}
+
+// wallet
+.wallet_bal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: $Primary-bg--25;
+  padding: 1.2rem 1.6rem;
+  border-radius: 12px;
+
+  & > span {
+    color: $color-text--200;
+  }
+
+  & > h3 {
+    color: $color-primary--500;
+    margin: 0;
+  }
+}
+
+.price_distro {
+  background-color: $Primary-bg--25;
+  padding: 1.2rem 1.6rem;
+  border-radius: 12px;
+  gap: 0.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & > *:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  & > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    & > *:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    & > span {
+      color: $color-text--200;
+    }
+
+    & > span:nth-child(even) {
+      color: $color-primary--600;
+      text-align: right;
+      white-space: break-spaces;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+  }
+}
+
+.saveAccount {
+  display: flex;
+  gap: 1.5rem;
+  transform: translateY(-0.5rem);
+  align-items: center;
+}
+
+.input_control {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content max-content;
+  gap: 1rem;
+
+  & .recipient_input_control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.withdraw_note {
+  display: grid;
+  padding: 1rem;
+  background: $warning-50;
+  opacity: 0.8;
+  border-radius: 0.8rem;
+  grid-template-columns: 0.1fr 0.9fr;
+  gap: 1rem;
+  align-items: center;
+  line-height: 1.7rem;
+}
+
+.other_acct_control {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  transform: translateY(-0.5rem);
+
+  & button {
+    color: $color-primary--600;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+}
+
+.colored_text {
+  color: var(--primary);
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+.toggle {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 3.4rem;
+  height: 2rem;
+  background-color: $error-outline--200;
+  border-radius: 30px;
+}
+
+.toggle:after {
+  content: "";
+  position: absolute;
+
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background-color: white;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+  transition: all 0.1s ease-in-out;
+}
+
+.checkbox:checked + .toggle::after {
+  left: calc(100% - 1.9rem);
+}
+
+.checkbox:checked + .toggle {
+  background-color: $color-primary--600;
+}
+
+.checkbox {
+  display: none;
+}
+
+// fund wallet
+.fund_method {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  & h3 {
+    margin: 0rem;
+  }
+
+  & .fund_mode {
+    padding: 1.2rem;
+    border: 1px solid $outline-100;
+    border-radius: 0.8rem;
+    display: flex;
+    gap: 0.8rem;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+
+    & .img_container {
+      width: 6.5rem;
+      display: flex;
+      position: relative;
+    }
+
+    &_container {
+      display: grid;
+      grid-template-rows: max-content max-content;
+      gap: 0rem;
+
+      & * {
+        color: $color-text--600;
+        margin: 0;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+#active_fund-method {
+  background-color: $color-primary--500;
+
+  & * {
+    color: white;
+  }
+}
+
+.gateway_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  & .gateway {
+    height: 6.4rem;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 0.8rem;
+  }
+}
+
+.gateway_container_btn {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.gateway_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  min-height: 45px;
+  border-radius: 0.8rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: $color-primary--600;
+  padding: 0 1.6rem;
+  color: white;
+  transition: 0.1s ease-in;
+
+  &:disabled {
+    color: $color-text-300-disabled;
+    background-color: $Primary-bg--25;
+  }
+}
+
+.active_gateway {
+  border: 0.2rem solid $color-primary--500 !important;
+}
+
+// invest
+.terms_cta {
+  text-align: center;
+  display: block;
+  line-height: 1.6;
+
+  & a {
+    text-decoration: underline;
+    padding: 0;
+    font-size: inherit;
+  }
+}
+
+.account_select {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  & h3 {
+    margin: 0rem;
+  }
+
+  & .account {
+    padding: 1.2rem;
+    border: 1px solid $outline-100;
+    border-radius: 0.8rem;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    gap: 1.2rem;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+
+    & .img_container {
+      align-self: end;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 4.2rem;
+      height: 4.2rem;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: #6589f6;
+    }
+
+    & .account_container {
+      display: grid;
+      grid-template-rows: max-content max-content;
+      gap: 0.5rem;
+
+      & * {
+        color: $color-text--600;
+        margin: 0;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+#active_account {
+  background-color: $color-primary--500;
+
+  & * {
+    color: white;
+  }
+}
+
+.user_access_warning {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+  color: $color-text--600;
+
+  & .warn_text {
+    line-height: 1.2;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  & button {
+    padding: 0;
+    background-color: transparent;
+    color: $color-primary--600;
+    border: none;
+    text-decoration: underline;
+  }
+}
+
+.pin_submit_form {
+  display: flex;
+  flex-direction: column;
+
+  & > *:first-child {
+    margin-bottom: 2rem;
+  }
+}
+
+.not_allowed {
+  border: 1px solid $error-outline--200;
+  background-color: $error-bg;
+
+  & .warn_text {
+    transform: translateY(-0.2rem);
+  }
+}
+
+.warning {
+  border: 1px solid $warning--500;
+  background-color: $warning-50;
+}
+
+.input_error {
+  color: $color-text--600;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.edit_project {
+  background-color: var(--bg-dashboard);
+  color: $color-text;
+  border-radius: 1.2rem;
+  padding: 2rem 3rem;
+
+  @include respond(max-width-tablet-666) {
+    width: 95%;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  @include respond(min-width-tablet-666) {
+    width: 50rem;
+    padding: 2rem 3rem;
+  }
+
+  & .heading {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    & .check_icon_cn {
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $success--50;
+      border-radius: 50%;
+    }
+
+    & .close_cta {
+      justify-self: flex-end;
+      display: flex;
+      align-items: center;
+      border: none;
+      background: transparent;
+
+      & svg {
+        font-size: 2.3rem;
+      }
+    }
+  }
+}
+
+.form_group {
+  & textarea {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.background_tick {
+  margin: 2rem auto;
+  width: 12.5rem;
+  height: 12.5rem;
+  background-color: var(--green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}

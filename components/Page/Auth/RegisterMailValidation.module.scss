@@ -1,0 +1,10 @@
+.input_controller {
+	max-width: 32rem;
+	margin: 3rem auto 4rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: max-content;
+	grid-auto-flow: row;
+	grid-auto-rows: max-content;
+	gap: 2rem;
+}

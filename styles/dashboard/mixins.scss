@@ -1,0 +1,668 @@
+// MEDIA QUERY MANAGER
+/*
+
+$breakpoint arguement choices:
+- phone
+- tablet
+- notebook
+- laptop
+- big-desktop
+
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint==max-width-phones-300 {
+    @media only screen and (max-width: 299px) {
+      @content;
+    } //300px
+  }
+  @if $breakpoint==max-width-phones-340 {
+    @media only screen and (max-width: 339px) {
+      @content;
+    } //340px
+  }
+  @if $breakpoint==max-width-phones-360 {
+    @media only screen and (max-width: 359px) {
+      @content;
+    }
+  }
+  @if $breakpoint==max-width-phones-380 {
+    @media only screen and (max-width: 379px) {
+      @content;
+    }
+  }
+  @if $breakpoint==max-width-phones-400 {
+    @media only screen and (max-width: 399px) {
+      @content;
+    }
+  }
+  @if $breakpoint==max-width-phones-420 {
+    @media only screen and (max-width: 419px) {
+      @content;
+    }
+  }
+  @if $breakpoint==max-width-phones-460 {
+    @media only screen and (max-width: 459px) {
+      @content;
+    }
+  }
+  @if $breakpoint==max-width-phones-480 {
+    @media only screen and (max-width: 479px) {
+      @content;
+    }
+  }
+  @if $breakpoint==max-width-phones-530 {
+    @media only screen and (max-width: 529px) {
+      @content;
+    } //480px
+  }
+  @if $breakpoint==max-width-tablet-600 {
+    @media only screen and (max-width: 599px) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint==max-width-tablet-666 {
+    @media only screen and (max-width: 665px) {
+      @content;
+    } //666px
+  }
+  @if $breakpoint==max-width-tablet-750 {
+    @media only screen and (max-width: 749px) {
+      @content;
+    } //750px
+  }
+  @if $breakpoint==max-width-tablet-800 {
+    @media only screen and (max-width: 800px) {
+      @content;
+    } //850px
+  }
+  @if $breakpoint==max-width-tablet-850 {
+    @media only screen and (max-width: 849px) {
+      @content;
+    } //850px
+  }
+  @if $breakpoint==max-width-notebook-929 {
+    @media only screen and (max-width: 928px) {
+      @content;
+    }
+  }
+  @if $breakpoint==max-width-notebook-974 {
+    @media only screen and (max-width: 973px) {
+      @content;
+    } //974px
+  }
+  @if $breakpoint==max-width-laptop-1050 {
+    @media only screen and (max-width: 1049px) {
+      @content;
+    } //1050px
+  }
+  @if $breakpoint==max-width-laptop-1200 {
+    @media only screen and (max-width: 1199px) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint==max-width-laptop-1276 {
+    @media only screen and (max-width: 1275px) {
+      @content;
+    } //1276px
+  }
+  @if $breakpoint==max-width-laptop-1300 {
+    @media only screen and (max-width: 1299px) {
+      @content;
+    } //1300px
+  }
+  @if $breakpoint==max-width-desktop-1400 {
+    @media only screen and (max-width: 1399px) {
+      @content;
+    } //1400px
+  }
+  @if $breakpoint==max-width-desktop-1500 {
+    @media only screen and (max-width: 1499px) {
+      @content;
+    } //1500px
+  }
+  @if $breakpoint==max-width-desktop-1570 {
+    @media only screen and (max-width: 1569px) {
+      @content;
+    } //1570px
+  }
+  @if $breakpoint==max-width-desktop-1920 {
+    @media only screen and (max-width: 1919px) {
+      @content;
+    } //1920px
+  }
+
+  @if $breakpoint==min-width-300-max-width-340 {
+    @media only screen and (min-width: 300px) and (max-width: 339px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-300-max-width-480 {
+    @media only screen and (min-width: 300px) and (max-width: 479px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-340-max-width-360 {
+    @media only screen and (min-width: 340px) and (max-width: 359px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-360-max-width-380 {
+    @media only screen and (min-width: 360px) and (max-width: 379px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-360-max-width-400 {
+    @media only screen and (min-width: 360px) and (max-width: 399px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-360-max-width-480 {
+    @media only screen and (min-width: 360px) and (max-width: 479px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-360-max-width-666 {
+    @media only screen and (min-width: 360px) and (max-width: 665px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-380-max-width-420 {
+    @media only screen and (min-width: 380px) and (max-width: 419px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-380-max-width-480 {
+    @media only screen and (min-width: 380px) and (max-width: 479px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-380-max-width-850 {
+    @media only screen and (min-width: 380px) and (max-width: 849px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-400-max-width-480 {
+    @media only screen and (min-width: 400px) and (max-width: 479px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-400-max-width-530 {
+    @media only screen and (min-width: 400px) and (max-width: 529px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-400-max-width-666 {
+    @media only screen and (min-width: 400px) and (max-width: 665px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-400-max-width-750 {
+    @media only screen and (min-width: 400px) and (max-width: 749px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-400-max-width-850 {
+    @media only screen and (min-width: 400px) and (max-width: 849px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-420-max-width-460 {
+    @media only screen and (min-width: 420px) and (max-width: 459px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-460-max-width-480 {
+    @media only screen and (min-width: 460px) and (max-width: 479px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-420-max-width-480 {
+    @media only screen and (min-width: 420px) and (max-width: 479px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-480-max-width-530 {
+    @media only screen and (min-width: 480px) and (max-width: 529px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-480-max-width-600 {
+    @media only screen and (min-width: 480px) and (max-width: 599px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-480-max-width-666 {
+    @media only screen and (min-width: 480px) and (max-width: 665px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-480-max-width-554 {
+    @media only screen and (min-width: 480px) and (max-width: 553px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-480-max-width-600 {
+    @media only screen and (min-width: 480px) and (max-width: 599px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-480-max-width-664 {
+    @media only screen and (min-width: 480px) and (max-width: 663px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-480-max-width-666 {
+    @media only screen and (min-width: 480px) and (max-width: 665px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-480-max-width-750 {
+    @media only screen and (min-width: 480px) and (max-width: 749px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-480-max-width-850 {
+    @media only screen and (min-width: 480px) and (max-width: 849px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-480-max-width-974 {
+    @media only screen and (min-width: 480px) and (max-width: 973px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-480-max-width-1050 {
+    @media only screen and (min-width: 480px) and (max-width: 1049px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-480-max-width-1200 {
+    @media only screen and (min-width: 480px) and (max-width: 1199px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-480-max-width-1400 {
+    @media only screen and (min-width: 480px) and (max-width: 1399px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-530-max-width-750 {
+    @media only screen and (min-width: 530px) and (max-width: 749px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-554-max-width-850 {
+    @media only screen and (min-width: 554px) and (max-width: 849px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-600-max-width-750 {
+    @media only screen and (min-width: 600px) and (max-width: 749px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-600-max-width-850 {
+    @media only screen and (min-width: 600px) and (max-width: 849px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-600-max-width-1200 {
+    @media only screen and (min-width: 600px) and (max-width: 1199px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-600-max-width-1500 {
+    @media only screen and (min-width: 600px) and (max-width: 1499px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-664-max-width-753 {
+    @media only screen and (min-width: 664px) and (max-width: 752px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-666-max-width-974 {
+    @media only screen and (min-width: 666px) and (max-width: 973px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-666-max-width-1050 {
+    @media only screen and (min-width: 666px) and (max-width: 1049px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-666-max-width-1200 {
+    @media only screen and (min-width: 666px) and (max-width: 1199px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-666-max-width-850 {
+    @media only screen and (min-width: 666px) and (max-width: 849px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-666-max-width-1300 {
+    @media only screen and (min-width: 666px) and (max-width: 1299px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-750-max-width-974 {
+    @media only screen and (min-width: 750px) and (max-width: 973px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-753-max-width-974 {
+    @media only screen and (min-width: 753px) and (max-width: 973px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-750-max-width-1050 {
+    @media only screen and (min-width: 750px) and (max-width: 1049px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-750-max-width-1200 {
+    @media only screen and (min-width: 750px) and (max-width: 1199px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-800-max-width-1500 {
+    @media only screen and (min-width: 800px) and (max-width: 1499px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-850-max-width-974 {
+    @media only screen and (min-width: 850px) and (max-width: 973px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-850-max-width-929 {
+    @media only screen and (min-width: 850px) and (max-width: 928px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-850-max-width-932 {
+    @media only screen and (min-width: 850px) and (max-width: 931px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-850-max-width-1015 {
+    @media only screen and (min-width: 850px) and (max-width: 1014px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-850-max-width-1050 {
+    @media only screen and (min-width: 850px) and (max-width: 1049px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-850-max-width-1300 {
+    @media only screen and (min-width: 850px) and (max-width: 1299px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-974-max-width-1030 {
+    @media only screen and (min-width: 974px) and (max-width: 1029px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-974-max-width-1200 {
+    @media only screen and (min-width: 974px) and (max-width: 1199px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-974-max-width-1300 {
+    @media only screen and (min-width: 974px) and (max-width: 1299px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-974-max-width-1400 {
+    @media only screen and (min-width: 974px) and (max-width: 1399px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-1200-max-width-1400 {
+    @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==min-width-phones-300 {
+    @media only screen and (min-width: 300px) {
+      @content;
+    } //300px
+  }
+  @if $breakpoint==min-width-phones-360 {
+    @media only screen and (min-width: 360px) {
+      @content;
+    } //360px
+  }
+  @if $breakpoint==min-width-phones-380 {
+    @media only screen and (min-width: 380px) {
+      @content;
+    } //380px
+  }
+  @if $breakpoint==min-width-phones-400 {
+    @media only screen and (min-width: 400px) {
+      @content;
+    } //400px
+  }
+  @if $breakpoint==min-width-phones-420 {
+    @media only screen and (min-width: 420px) {
+      @content;
+    }
+  }
+  @if $breakpoint==min-width-phones-480 {
+    @media only screen and (min-width: 480px) {
+      @content;
+    } //480px
+  }
+  @if $breakpoint==min-width-phones-530 {
+    @media only screen and (min-width: 530px) {
+      @content;
+    } //480px
+  }
+  @if $breakpoint==min-width-tablet-600 {
+    @media only screen and (min-width: 600px) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint==min-width-tablet-666 {
+    @media only screen and (min-width: 666px) {
+      @content;
+    } //666px
+  }
+  @if $breakpoint==min-width-tablet-750 {
+    @media only screen and (min-width: 750px) {
+      @content;
+    } //750px
+  }
+  @if $breakpoint==min-width-tablet-800 {
+    @media only screen and (min-width: 800px) {
+      @content;
+    } //850px
+  }
+  @if $breakpoint==min-width-tablet-850 {
+    @media only screen and (min-width: 850px) {
+      @content;
+    } //850px
+  }
+  @if $breakpoint==min-width-notebook-929 {
+    @media only screen and (min-width: 929px) {
+      @content;
+    } //974px
+  }
+  @if $breakpoint==min-width-notebook-932 {
+    @media only screen and (min-width: 932px) {
+      @content;
+    } //974px
+  }
+  @if $breakpoint==min-width-notebook-974 {
+    @media only screen and (min-width: 974px) {
+      @content;
+    } //974px
+  }
+  @if $breakpoint==min-width-notebook-1015 {
+    @media only screen and (min-width: 1015px) {
+      @content;
+    } //974px
+  }
+  @if $breakpoint==min-width-laptop-1030 {
+    @media only screen and (min-width: 1030px) {
+      @content;
+    } //1050px
+  }
+  @if $breakpoint==min-width-laptop-1050 {
+    @media only screen and (min-width: 1050px) {
+      @content;
+    } //1050px
+  }
+  @if $breakpoint==min-width-laptop-1200 {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint==min-width-laptop-1276 {
+    @media only screen and (min-width: 1276px) {
+      @content;
+    } //1276px
+  }
+  @if $breakpoint==min-width-laptop-1300 {
+    @media only screen and (min-width: 1300px) {
+      @content;
+    } //1300px
+  }
+  @if $breakpoint==min-width-desktop-1400 {
+    @media only screen and (min-width: 1400px) {
+      @content;
+    } //1400px
+  }
+  @if $breakpoint==min-width-desktop-1500 {
+    @media only screen and (min-width: 1500px) {
+      @content;
+    } //1500px
+  }
+  @if $breakpoint==min-width-desktop-1570 {
+    @media only screen and (min-width: 1570px) {
+      @content;
+    } //1570px
+  }
+  @if $breakpoint==min-width-desktop-1920 {
+    @media only screen and (min-width: 1920px) {
+      @content;
+    } //1920px
+  }
+}
+
+@mixin contentSidePadding {
+  @include respond(min-width-desktop-1400) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  @include respond(min-width-1200-max-width-1400) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  @include respond(min-width-480-max-width-1200) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @include respond(max-width-phones-480) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@mixin contentSidePaddingMin {
+  @include respond(min-width-phones-480) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @include respond(max-width-phones-480) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@mixin contentLeftSidePadding {
+  @include respond(min-width-desktop-1400) {
+    padding-left: 100px;
+  }
+  @include respond(min-width-1200-max-width-1400) {
+    padding-left: 50px;
+  }
+  @include respond(min-width-480-max-width-1200) {
+    padding-left: 30px;
+  }
+  @include respond(max-width-phones-480) {
+    padding-left: 16px;
+  }
+}
+
+@mixin contentRightSidePadding {
+  @include respond(min-width-desktop-1400) {
+    padding-right: 100px;
+  }
+  @include respond(min-width-1200-max-width-1400) {
+    padding-right: 50px;
+  }
+  @include respond(min-width-480-max-width-1200) {
+    padding-right: 30px;
+  }
+  @include respond(max-width-phones-480) {
+    padding-right: 16px;
+  }
+}
+
+@mixin contentSideMargin {
+  @include respond(min-width-desktop-1400) {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  @include respond(min-width-1200-max-width-1400) {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  @include respond(min-width-480-max-width-1200) {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  @include respond(max-width-phones-480) {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+@mixin contentWidth {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 160rem;
+  width: 100%;
+}
+
+@mixin line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+}
+
+@mixin component-loading {
+  background: #eee;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  background-size: 200% 100%;
+  animation: 1.2s shine linear infinite;
+  color: transparent;
+
+  & * {
+    opacity: 0;
+  }
+
+  @keyframes shine {
+    to {
+      background-position-x: -200%;
+    }
+  }
+}

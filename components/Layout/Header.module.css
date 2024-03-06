@@ -1,0 +1,64 @@
+.sun_icon {
+  color: orange
+}
+
+.moon_icon {
+
+}
+
+.dark_mode_control {
+  background: #343444;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  font-size: 16px;
+  padding: 0;
+  margin-left: 10px;
+  display: flex;
+  display: -webkit-box;  
+  display: -moz-box;      
+  display: -ms-flexbox;   
+  display: -webkit-flex; 
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+}
+
+@media only screen and (max-width: 990px) {
+  .dark_mode_control {
+    display: none !important;
+  }
+}
+
+.dark_mode_control:hover {
+  border: none;
+   outline: none;
+}
+
+.dark_mode_control:focus {
+  border: none;
+   outline: none;
+}
+
+.menu_item:hover a {
+  color: var(--primary-color3) !important;
+}
+
+.active_nav a {
+  color: var(--primary-color3) !important;
+}
+
+@media only screen and (max-width: 990px) {
+  .nav {
+    transition: all .3s;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .collapse_nav {
+    height: 0;
+  }
+}

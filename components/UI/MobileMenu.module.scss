@@ -1,0 +1,41 @@
+.backdrop {
+  position: fixed;
+  top: 0rem;
+  left: 0rem;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+  background: rgba(54, 60, 78, 0.8);
+  backdrop-filter: blur(2px);
+}
+
+.content {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: var(--bg-dashboard);
+  color: var(--white);
+  height: 100vh;
+  height: 100dvh;
+  z-index: $z-index-max;
+
+  @include respond(max-width-phones-420) {
+    width: 100%;
+  }
+  @include respond(min-width-phones-420) {
+    width: 35rem;
+  }
+
+  & > div {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr;
+    padding-bottom: 4rem;
+    padding-top: 1.5rem;
+    @include contentSidePadding;
+  }
+}

@@ -1,0 +1,361 @@
+.input_control {
+  width: 100%;
+  height: max-content;
+
+  input[type="password"]::-ms-reveal,
+  input[type="password"]::-ms-clear {
+    display: none;
+  }
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.7rem;
+}
+
+.input {
+  height: $input-height-max;
+  width: 100%;
+  padding: 0 1rem 0 1rem;
+  border-radius: 8px;
+  font-size: $input-font-size;
+  outline: none;
+  transition: 0.2s ease;
+  background: white;
+  border-color: rgba(0, 0, 0, 0.12);
+  border-style: solid;
+  color: black;
+
+  @include respond(max-width-phones-480) {
+    border-width: 1px;
+  }
+  @include respond(min-width-phones-480) {
+    border-width: 2px;
+  }
+
+  &:disabled {
+    background-color: $tertiary-bg-300 !important;
+  }
+}
+
+.upload_input_control {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: max-content;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  transition: all 0.2s;
+
+  @include respond(max-width-tablet-600) {
+    grid-template-rows: max-content max-content 20rem;
+  }
+  @include respond(min-width-tablet-600) {
+    grid-template-rows: max-content max-content 25rem;
+  }
+
+  & .image_desc {
+    color: $color-text--200;
+    margin-bottom: 1.4rem;
+  }
+
+  & .upload_container {
+    border-radius: 1.2rem;
+    background-color: $secondary-bg-200;
+    height: 100%;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content max-content;
+    align-content: center;
+    justify-items: center;
+
+    & * {
+      text-align: center;
+    }
+
+    & label {
+      overflow: hidden;
+      color: $color-primary--600;
+      cursor: pointer;
+
+      & input {
+        display: none;
+      }
+    }
+  }
+
+  & .active {
+    background-color: rgba(#000000, 0.2);
+  }
+
+  & .img_id_container {
+    grid-column: 1 / -1;
+    width: 100%;
+
+    & > div {
+      height: 100%;
+      position: relative;
+      max-width: max-content;
+
+      & img {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+        object-position: 0% 0%;
+        border-radius: 1.2rem;
+
+        @include respond(max-width-phones-400) {
+          height: auto;
+          width: 100%;
+        }
+        @include respond(min-width-phones-400) {
+          height: 100%;
+          width: auto;
+        }
+      }
+
+      & .close_btn {
+        position: absolute;
+        right: 1.1rem;
+        top: 1.1rem;
+        padding: 0;
+        display: flex;
+        width: 3.2rem;
+        height: 3.2rem;
+        background-color: #1b2023;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+
+        & svg {
+          font-size: 2.1rem;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.input_error {
+  color: $color-text--600;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.DOB_input {
+  height: $input-height-max;
+  width: 100%;
+  padding: 0 1.2rem 0 1rem;
+  border-radius: 8px;
+  font-size: $input-font-size;
+  outline: none;
+  transition: 0.2s ease;
+  border-color: rgba(0, 0, 0, 0.12);
+  border-style: solid;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+
+  @include respond(max-width-phones-480) {
+    border-width: 1px;
+  }
+  @include respond(min-width-phones-480) {
+    border-width: 2px;
+  }
+}
+
+.pin_input {
+  position: relative;
+  padding: 0;
+
+  & .review_icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    top: 0;
+    width: 4.3rem;
+    height: $input-height-max;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.numberInput {
+  width: 100%;
+  padding: 0 1rem 0 1rem;
+  height: $input-height-max;
+  border-radius: 8px;
+  font-size: $input-font-size;
+  outline: none;
+  transition: 0.2s ease;
+  border-color: rgba(0, 0, 0, 0.12);
+  border-style: solid;
+  @include respond(max-width-phones-480) {
+    border-width: 1px;
+  }
+  @include respond(min-width-phones-480) {
+    border-width: 2px;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+.phoneinput {
+  border-radius: 8px;
+  padding: 0 1rem 0 1rem;
+  transition: 0.2s ease;
+  overflow: hidden;
+  border-color: rgba(0, 0, 0, 0.12);
+  border-style: solid;
+
+  @include respond(max-width-phones-480) {
+    border-width: 1px;
+  }
+  @include respond(min-width-phones-480) {
+    border-width: 2px;
+  }
+
+  & > input,
+  & > select {
+    width: 100%;
+    font-size: $input-font-size;
+    height: $input-height-small;
+    outline: none;
+    border: none;
+  }
+}
+
+.disabled_input {
+  background-color: $tertiary-bg-300 !important;
+}
+
+.country_input {
+  border-radius: 8px;
+  padding: 0 1rem 0 1rem;
+  transition: 0.2s ease;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-color: rgba(0, 0, 0, 0.12);
+  border-style: solid;
+  @include respond(max-width-phones-480) {
+    border-width: 1px;
+  }
+  @include respond(min-width-phones-480) {
+    border-width: 2px;
+  }
+
+  & .img_container {
+    height: 100%;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    width: 5.2rem;
+
+    & .image_control {
+      flex-basis: 2.9rem;
+      height: 2.1rem;
+      position: relative;
+      border: 1px solid grey;
+      line-height: 0rem;
+    }
+
+    & > svg {
+      font-size: 1.6rem;
+      color: rgb(165, 163, 163);
+
+      &:hover {
+        color: $color-primary--600;
+      }
+    }
+  }
+
+  & select {
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    height: $input-height-min;
+    width: 5.2rem;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    background: transparent;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  & > input {
+    border: none;
+    height: $input-height-min;
+    width: 100%;
+    padding: 0rem 0 0 0.2rem;
+    background-color: transparent;
+  }
+}
+
+.checkbox_input {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4.1rem;
+  grid-auto-flow: row;
+  grid-auto-rows: 4.1rem;
+  align-items: center;
+
+  & h4 {
+    margin: 0;
+  }
+
+  & .checkbox_input_control {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.focusable {
+  &:focus {
+    border-color: $color-primary--600;
+
+    @include respond(max-width-phones-480) {
+      border-width: 1px;
+    }
+    @include respond(min-width-phones-480) {
+      border-width: 2px;
+    }
+  }
+}
+
+.invalid {
+  border-color: $error-outline--200;
+
+  @include respond(max-width-phones-480) {
+    border-width: 1px;
+  }
+  @include respond(min-width-phones-480) {
+    border-width: 2px;
+  }
+}
+
+.label_control {
+  display: flex;
+  justify-content: space-between;
+}

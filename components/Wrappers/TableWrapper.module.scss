@@ -1,0 +1,97 @@
+.scroll_wrapper {
+  overflow: visible;
+  overflow-x: auto;
+  width: 100%;
+  position: relative;
+
+  & > div {
+    position: absolute;
+    bottom: 0;
+    height: calc(100% - 60px);
+    width: 100%;
+    opacity: 0.5;
+    z-index: 20;
+  }
+
+  & table {
+    min-width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    & tr:nth-child(even) {
+      background-color: rgba($color: #7d7e80, $alpha: 0.1);
+    }
+
+    & th,
+    & td {
+      text-transform: capitalize;
+      text-align: left;
+      border-bottom: 1px solid $outline-100;
+      word-wrap: break-word;
+      padding-left: 1.3rem;
+      white-space: nowrap;
+
+      & a {
+        min-height: max-content;
+      }
+    }
+
+    & th {
+      @include respond(max-width-tablet-600) {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+      @include respond(min-width-tablet-600) {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+      }
+    }
+
+    & td {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    & th:last-of-type,
+    & td:last-of-type {
+      padding-right: 1rem;
+    }
+
+    & td {
+      color: #a1a0a7;
+    }
+  }
+
+  & .table_action {
+    & th:last-of-type,
+    & td:last-of-type {
+      // width: 11rem;
+      // max-width: 11rem;
+    }
+  }
+}
+
+.loading_skeleton {
+  & td {
+    padding-top: 16.5px !important;
+    padding-bottom: 16.5px !important;
+  }
+
+  & div {
+    background: #a1a0a7;
+    background: linear-gradient(110deg, #272727 8%, #222222 18%, #141414 33%);
+    background-size: 200% 100%;
+    animation: 1.2s shine linear infinite;
+    border-radius: 10px;
+
+    & > span {
+      opacity: 0 !important;
+    }
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}

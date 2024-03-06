@@ -1,0 +1,79 @@
+.contact_row {
+  display: grid !important;
+  @include contentWidth;
+
+  @include respond(max-width-tablet-850) {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content max-content;
+    padding-top: 5rem;
+    padding-bottom: 1.5rem;
+  }
+  @include respond(min-width-tablet-850) {
+    grid-template-columns: 0.4fr 0.6fr;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  @include respond(max-width-laptop-1050) {
+    gap: 1rem;
+  }
+  @include respond(min-width-laptop-1050) {
+    gap: 3rem;
+  }
+}
+
+.contact_us_mail {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-content: end;
+  grid-template-rows: max-content max-content max-content;
+  justify-content: flex-end;
+  flex-direction: column;
+
+  @include respond(max-width-tablet-850) {
+    order: 2;
+  }
+
+  & h1 {
+    margin: 0 0 1rem;
+    grid-column: 1 / -1;
+    margin-top: 5rem;
+  }
+
+  & .contact_us_mail_text {
+    // color: $color-text--200;
+    max-width: 37rem;
+    grid-column: 1 / -1;
+    margin: 1rem 0;
+  }
+
+  & .contact_us_mails_contacts {
+    color: $color-primary--600;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+
+    @include respond(min-width-tablet-850) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  & img {
+    @include respond(max-width-phones-480) {
+      width: 13rem;
+      height: auto;
+    }
+    @include respond(min-width-tablet-850) {
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+.contact_row_mess {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 5px;
+  width: 100% !important;
+}

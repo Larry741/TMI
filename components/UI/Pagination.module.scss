@@ -1,0 +1,160 @@
+.pagination {
+  grid-column: 1 / span 2;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 1.2rem;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+
+  @include respond(max-width-tablet-666) {
+    flex-direction: column;
+  }
+  @include respond(min-width-tablet-666) {
+    flex-direction: row;
+  }
+
+  & .pages {
+    display: flex;
+    gap: 1rem;
+
+    & .page {
+      padding: 0.4rem 1rem;
+      border-radius: 0.4rem;
+      background-color: $secondary-bg-200;
+      color: $color-text--600;
+      border: none;
+
+      @include respond(min-width-tablet-750) {
+        padding: 0.4rem 1.2rem;
+      }
+    }
+
+    & .activePage {
+      background-color: $color-primary--600;
+      color: white;
+    }
+  }
+}
+
+.arrow-pagination {
+  height: 5.6rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 0 2rem;
+  color: $color-text--200;
+  justify-content: flex-end;
+  margin-top: 1rem;
+
+  @include respond(min-width-tablet-666) {
+    justify-content: space-between;
+  }
+
+  & .rows_form {
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    gap: 1.5rem;
+    display: none;
+
+    @include respond(min-width-tablet-666) {
+      display: grid;
+    }
+
+    & select {
+      border: none;
+      background-color: transparent;
+      outline: none;
+      font-family: inherit;
+    }
+  }
+
+  & .page_cta {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr max-content max-content;
+
+    @include respond(min-width-tablet-666) {
+      grid-template-columns: max-content max-content max-content;
+      width: max-content;
+    }
+
+    & > span {
+      margin-right: 2rem;
+    }
+
+    & > button {
+      width: 3rem;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+    }
+  }
+}
+
+.compound_pagination {
+  height: 3.5rem;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  // padding: 0 2rem;
+  color: $color-text--200;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  & .arrow_btns {
+    width: 3rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 0.6rem;
+    border: 1px solid $color-primary--600;
+
+    & svg {
+      color: $color-primary--600;
+    }
+
+    &:disabled {
+      border: 1px solid #898989;
+
+      & svg {
+        color: #898989;
+      }
+    }
+  }
+
+  & .prev_btn {
+    & svg {
+      transform: translateX(0.3rem);
+    }
+  }
+
+  & .page {
+    padding: 0;
+    min-width: 3rem;
+    height: 100%;
+    border-radius: 0.6rem;
+    background-color: transparent;
+    border: 1px solid $color-primary--600;
+    color: $color-primary--600;
+  }
+
+  & .activePage {
+    background-color: $color-primary--600;
+    border: 1px solid $color-primary--600;
+    color: white;
+  }
+}

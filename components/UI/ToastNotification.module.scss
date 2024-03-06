@@ -1,0 +1,94 @@
+.toast_container {
+  width: 100vw;
+  position: fixed;
+  bottom: 0rem;
+  display: flex;
+  justify-content: center;
+  z-index: $z-index-max;
+}
+
+.toast {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 1.5rem;
+  position: relative;
+  width: max-content;
+  background-color: white;
+  color: $color-text--600;
+  border-radius: 0.6rem;
+  // animation: slideInUp 0.3s ease-in-out;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.12);
+
+  @include respond(max-width-phones-480) {
+    width: 90%;
+  }
+  @include respond(min-width-phones-480) {
+    min-width: 40rem;
+    max-width: 90%;
+  }
+}
+
+.error_toast {
+  background-color: $error-500;
+  color: white;
+}
+
+.success_toast {
+  background-color: $success--500;
+  color: white;
+}
+
+.img_control {
+  padding: 0.7rem;
+  align-self: baseline;
+  background-color: $primary-bg;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text_box {
+  & .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0rem;
+  }
+
+  & span {
+    display: inline-block;
+  }
+
+  & span:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.btn {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.2rem;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+
+  & svg {
+    font-size: 2.3rem;
+    color: white;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(-50%, 3rem, 0);
+    visibility: visible;
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+    opacity: 1;
+  }
+}

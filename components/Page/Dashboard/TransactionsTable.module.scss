@@ -1,0 +1,78 @@
+.recent_activities {
+  overflow: hidden;
+  margin-top: 3rem;
+  border-radius: 16px;
+  border: 1px solid #363c4e;
+  padding-top: 2.5rem;
+  padding-bottom: 0;
+  background-color: var(--bg-dashboard);
+
+  & h2 {
+    margin: 0 0 2rem;
+    color: $color-text;
+    @include contentSidePaddingMin;
+  }
+}
+
+.activities_list {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  max-height: 40rem;
+  overflow-y: auto;
+
+  & .acitivities_list_item {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    @include contentSidePaddingMin;
+
+    & .avatar_control {
+      grid-row: 1 / -1;
+      position: relative;
+      width: 5rem;
+      height: 5rem;
+      flex-shrink: 0;
+      overflow: hidden;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $secondary-bg-50;
+      color: $secondary-default--600;
+      text-transform: uppercase;
+
+      @include respond(max-width-tablet-666) {
+        margin-right: 1rem;
+      }
+      @include respond(min-width-tablet-666) {
+        margin-right: 2rem;
+      }
+    }
+
+    & .text_control {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+
+      & .invest_details {
+        text-transform: capitalize;
+      }
+
+      & .date {
+        color: $color-text;
+      }
+    }
+  }
+
+  & .acitivities_list_item:not(:last-of-type) {
+    border-bottom: 1px solid #363c4e;
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}

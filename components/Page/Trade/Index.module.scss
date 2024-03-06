@@ -1,0 +1,97 @@
+.trade_index {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
+  color: #a1a0a7;
+  grid-template-rows: max-content;
+  grid-auto-flow: row;
+  grid-auto-rows: max-content;
+
+  @include respond(max-width-tablet-800) {
+    grid-template-columns: 1fr;
+    column-gap: 1rem;
+    row-gap: 2rem;
+  }
+  @include respond(min-width-tablet-800) {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  &_row {
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    background-color: var(--bg-dashboard);
+    display: grid;
+    gap: 2rem;
+
+    @include respond(max-width-tablet-600) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 15rem 1fr;
+    }
+    @include respond(min-width-600-max-width-1500) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 25rem 1fr;
+    }
+    @include respond(min-width-desktop-1500) {
+      grid-template-columns: 29rem 1fr;
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 1rem;
+      object-position: center;
+    }
+
+    & h2 {
+      width: 100%;
+    }
+
+    & .link {
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: $button-height;
+      border-radius: 0.8rem;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      padding: 0 1.8rem;
+      color: white;
+      transition: 0.1s ease-in;
+      // margin-top: 1rem;
+      width: 100%;
+
+      @include respond(max-width-tablet-800) {
+      }
+
+      &:hover {
+        color: rgba($color: white, $alpha: 0.8);
+      }
+
+      &:focus {
+        color: rgba($color: white, $alpha: 0.8);
+      }
+    }
+
+    & .trade_link_forex {
+      background-color: #e50202;
+    }
+
+    & .trade_link_crypto {
+      background-color: #10d876;
+    }
+
+    & .trade_link_stocks {
+      background-color: #fe9431;
+    }
+
+    & .trade_link_gold {
+      background-color: #5d78ff;
+    }
+  }
+}

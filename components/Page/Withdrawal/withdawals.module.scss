@@ -1,0 +1,74 @@
+.form {
+  & input {
+    text-align: left !important;
+  }
+}
+
+.info_list {
+  & li {
+    padding-left: 0 !important;
+    display: flex;
+    gap: 1.2rem;
+    color: #a1a0a7;
+
+    & svg {
+      flex-shrink: 0;
+      transform: translateY(0.7rem);
+    }
+  }
+}
+
+.textarea {
+  padding-top: 0.8rem;
+}
+
+.dollar_input_label {
+  color: (--white);
+}
+
+.form_group {
+  gap: 1rem;
+  flex-wrap: nowrap;
+
+  @include respond(max-width-phones-530) {
+    flex-direction: column;
+  }
+}
+
+.network_fee {
+  @include respond(max-width-phones-530) {
+    text-align: left !important;
+  }
+}
+
+.card_header {
+  padding: 15px 20px;
+
+  @media only screen and (max-width: 480px) {
+    padding: 15px 10px !important;
+  }
+}
+
+.list {
+  & * {
+    text-transform: capitalize;
+  }
+}
+
+.card_body {
+  @include respond(max-width-tablet-666) {
+    padding: 1.5rem 0 0 !important;
+  }
+}
+
+.btn_container {
+  display: flex;
+  justify-content: flex-end;
+}
+.proceed_btn {
+  width: 10rem;
+
+  @include respond(max-width-phones-530) {
+    width: 100%;
+  }
+}

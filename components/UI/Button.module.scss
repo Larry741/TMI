@@ -1,0 +1,58 @@
+.navigationButton {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 1rem;
+
+  & .nav_button {
+    width: 32px;
+    height: 32px;
+    background-color: $Primary-bg--25;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+
+    & svg {
+      color: $color-primary--600;
+    }
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  // position: relative;
+  width: 100%;
+  min-height: $button-height;
+  border-radius: 0.8rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 1.6rem;
+  color: white;
+  transition: 0.1s ease-in;
+
+  & > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+}
+
+.bg {
+  background-color: var(--primary-color3);
+
+  &:disabled {
+    color: $color-text-300-disabled;
+    background-color: $Primary-bg--25;
+  }
+
+  &:hover {
+    background-color: var(--primary);
+  }
+}

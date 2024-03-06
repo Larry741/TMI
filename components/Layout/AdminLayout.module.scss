@@ -1,0 +1,648 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  transition: all 0.2s;
+
+  @include respond(max-width-phones-480) {
+    background: $primary-bg--50;
+  }
+  @include respond(min-width-phones-480) {
+    background: $Primary-bg--25;
+  }
+
+  & .menu_text {
+    transform: translateY(0.1rem);
+
+    @include respond(max-width-laptop-1200) {
+      display: none;
+    }
+    @include respond(min-width-laptop-1200) {
+      display: block;
+    }
+  }
+}
+
+.top_bar {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+
+  & .menu_btn {
+    @include respond(max-width-laptop-1200) {
+      background-color: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      padding: 0;
+    }
+
+    @include respond(min-width-laptop-1200) {
+      display: none;
+    }
+  }
+
+  & .logo_container {
+    display: flex;
+    align-items: center;
+
+    .header_link {
+      line-height: 1.2;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0;
+
+      & img {
+        height: 4rem;
+        width: 4rem;
+        flex-shrink: 0;
+      }
+
+      & h1 {
+        margin: 0;
+        max-width: 10.5rem;
+      }
+
+      &:hover {
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.sidebar {
+  background-color: $color-primary--900;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  transition: all 0.2s;
+  overflow: hidden;
+
+  @include respond(max-width-notebook-974) {
+    padding: 0;
+    flex-basis: 0%;
+  }
+  @include respond(min-width-974-max-width-1200) {
+    flex-basis: 7rem;
+    padding: 0 1rem;
+  }
+  @include respond(min-width-laptop-1200) {
+    min-width: 23rem;
+    max-width: 14.7%;
+    padding: 0 1.3rem;
+  }
+
+  & .logo {
+    height: 60px;
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $division--200;
+
+    @include respond(max-width-laptop-1200) {
+      justify-content: center;
+    }
+    @include respond(min-width-laptop-1200) {
+      grid-template-columns: max-content max-content;
+    }
+
+    & h1 {
+      margin: 0;
+    }
+
+    & a {
+      padding: 0;
+    }
+  }
+
+  .side_links_dp_max_height {
+    max-height: 4.7rem;
+  }
+
+  .side_links_dp_full_height {
+    max-height: max-content;
+  }
+
+  .side_links_dp {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    & > .dp_btn {
+      @include respond(max-width-laptop-1200) {
+        display: none;
+      }
+
+      @include respond(min-width-laptop-1200) {
+        position: absolute;
+        right: 0.2rem;
+        top: 1.65rem;
+        z-index: 20;
+        background-color: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & svg {
+          color: $secondary-text--200;
+          font-size: 1.7rem;
+        }
+      }
+    }
+
+    & > .dp_btn_active {
+      & svg {
+        color: white;
+      }
+    }
+
+    & .side_links_dp_dc {
+      padding: 1rem 0;
+
+      @include respond(max-width-laptop-1200) {
+        display: none;
+      }
+
+      @include respond(min-width-laptop-1200) {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        & .sub_link {
+          height: 3.6rem;
+          width: 100%;
+          background-color: transparent;
+          border: none;
+          display: grid;
+          align-items: center;
+          gap: 1rem;
+          color: $secondary-text--200;
+          border-radius: 0.8rem;
+          overflow: hidden;
+          cursor: pointer;
+          padding: 0 0 0 calc(1.6rem + 28px);
+        }
+      }
+    }
+  }
+
+  & .side_links,
+  & .side_links_dp_link {
+    width: 100%;
+    height: 4.7rem;
+    background-color: transparent;
+    border: none;
+    display: grid;
+    align-items: center;
+    gap: 1rem;
+    color: $secondary-text--200;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+
+    @include respond(max-width-laptop-1200) {
+      grid-template-columns: max-content;
+      padding: 0 1rem 0 1rem;
+      justify-content: center;
+    }
+    @include respond(min-width-laptop-1200) {
+      grid-template-columns: max-content 1fr;
+      padding: 0 0 0 1rem;
+    }
+
+    &:hover {
+      background-color: $selected;
+    }
+  }
+
+  & .account_banner {
+    position: absolute;
+    bottom: 7rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    background-color: $color-primary--500;
+    color: white;
+    padding: 1.3rem 0 1.3rem 1rem;
+    width: 95%;
+    align-self: end;
+
+    & .kyc_banner_container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    & h2 {
+      margin: 0;
+      margin-bottom: 0.3rem;
+    }
+
+    & .link {
+      background-color: white;
+      color: $color-primary--600;
+      margin-top: 1rem;
+      padding: 0.5rem;
+      border-radius: 0.6rem;
+    }
+  }
+
+  & .invest_cta {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-primary--500;
+    color: white;
+    padding: 1.3rem 0 1.3rem 1rem;
+    width: 95%;
+    align-self: end;
+    gap: 0.5rem;
+
+    @include respond(max-width-laptop-1200) {
+      display: none;
+    }
+
+    & .cta_content_container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      & h2 {
+        margin: 0;
+        margin-bottom: 0.3rem;
+        white-space: nowrap;
+      }
+
+      & .link {
+        background-color: white;
+        color: $color-primary--600;
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        border-radius: 0.6rem;
+        min-height: 35px;
+      }
+    }
+  }
+}
+
+.nav_content_control {
+  flex-basis: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.navbar_container {
+  width: 100%;
+  height: 60px;
+  z-index: 2000;
+
+  @include respond(max-width-notebook-974) {
+    position: relative;
+  }
+  @include respond(min-width-notebook-974) {
+    position: sticky;
+    top: 0;
+    right: 0;
+  }
+
+  .navbar {
+    width: 100%;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    height: 60px;
+    top: 0;
+    right: 0;
+
+    @include respond(max-width-notebook-974) {
+      position: fixed;
+      padding: 0 2rem;
+      backdrop-filter: blur(8px);
+      background-color: rgba(255, 255, 255, 0.85);
+    }
+    @include respond(min-width-notebook-974) {
+      position: sticky;
+      padding: 0 4rem;
+      background-color: white;
+    }
+
+    & > .nav_button {
+      height: max-content;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      justify-items: flex-end;
+      padding: 0;
+      display: none;
+
+      @include respond(min-width-notebook-974) {
+        display: flex;
+      }
+    }
+
+    & .search_btn {
+      transform: translateY(0.2rem);
+    }
+
+    & .notebook_menu {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 200;
+
+      @include respond(min-width-notebook-974) {
+        display: none;
+      }
+
+      & a {
+        padding: 0;
+      }
+
+      & button {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+  display: none;
+
+  @include respond(min-width-notebook-974) {
+    display: block;
+  }
+
+  & .avatar {
+    width: 4.5rem;
+    height: 5.6rem;
+    display: flex;
+    align-items: center;
+
+    & > .imageControl {
+      background-color: $secondary-bg-50;
+      overflow: hidden;
+      border-radius: 50%;
+      position: relative;
+      width: 100%;
+      height: 4rem;
+      width: 4rem;
+    }
+  }
+
+  & .dropdown_list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin: 0;
+    padding: 0.8rem 0 0.2rem;
+    list-style-type: none;
+    border-radius: 0.8rem;
+    width: 24rem;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.12);
+
+    & .dropdown_header {
+      display: flex;
+      padding: 1.4rem 1rem;
+      gap: 1.4rem;
+      align-items: center;
+      width: 100%;
+      overflow: hidden;
+
+      & > span:first-of-type {
+        flex-shrink: 0;
+
+        & img {
+          border-radius: 50%;
+          background-color: $secondary-bg-50;
+        }
+      }
+
+      & .heading {
+        height: 100%;
+        flex-basis: 100%;
+        overflow: hidden;
+        color: $color-text--200;
+
+        & .name {
+          margin-top: 0.4rem;
+          color: $color-text--600;
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    & .dropdown_listitem {
+      padding: 0.4rem 0;
+
+      & .heading {
+        display: flex;
+        flex-direction: column;
+      }
+
+      & .listItem_control {
+        padding: 1.5rem 1.3rem;
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        justify-items: left;
+        gap: 1.2rem;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        width: 100%;
+
+        &:hover {
+          background-color: $Primary-bg--25;
+        }
+      }
+
+      & .log_out {
+        color: $error-500;
+      }
+    }
+    & .li2 {
+      border-top: 0.1rem solid rgb(202, 196, 196);
+      border-bottom: 0.1rem solid rgb(202, 196, 196);
+    }
+  }
+}
+
+.content {
+  min-height: 50vh;
+  width: 100%;
+
+  @include respond(max-width-tablet-750) {
+    padding: 3.5rem 1.8rem 2rem;
+  }
+
+  @include respond(min-width-750-max-width-1200) {
+    padding: 3.5rem 2.3rem 3rem;
+  }
+
+  @include respond(min-width-laptop-1200) {
+    padding: 4rem 3rem 4rem;
+  }
+
+  & > div:first-of-type {
+    min-height: 100%;
+    max-width: 140rem;
+    margin: 0 auto;
+  }
+}
+
+.no_side_padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#active {
+  background-color: $selected;
+  color: white;
+}
+
+#active_parent_link {
+  color: white;
+}
+
+#active_sub_link {
+  color: white;
+  background-color: $selected;
+}
+
+.slideList {
+  animation: slideList 0.5s ease-out forwards;
+}
+
+.slideBack {
+  animation: slideBack 0.5s ease forwards;
+}
+
+.rotate_360 {
+  animation: rotate360 0.3s ease forwards;
+}
+
+.rotate_0 {
+  animation: rotate0 0.3s ease forwards;
+}
+
+@keyframes rotate0 {
+  from {
+    transform: rotateZ(-180deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(-180deg);
+  }
+}
+
+@keyframes slideList {
+  from {
+    max-height: 4.7rem;
+  }
+  to {
+    max-height: 300px;
+  }
+}
+
+@keyframes slideBack {
+  from {
+    max-height: 300px;
+  }
+  to {
+    max-height: 4.7rem;
+  }
+}
+
+.menu_overlay {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content;
+  grid-auto-flow: row;
+  grid-auto-rows: max-content;
+  align-content: space-between;
+  width: 100%;
+  padding: 3rem 0 0;
+
+  & .links_control {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    & a,
+    & button {
+      width: 100%;
+      display: flex;
+      gap: 1.5rem;
+    }
+  }
+
+  & .profile_list {
+    margin-top: 2rem;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+    list-style: none;
+
+    & li {
+      & a,
+      & button {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: 1px solid;
+        border-radius: 0.8rem;
+        border-color: $color-primary--600;
+        color: $color-primary--600;
+        width: 100%;
+        min-height: $button-height;
+        gap: 1rem;
+      }
+
+      & button {
+        color: $error-500;
+        border-color: $error-500;
+      }
+    }
+  }
+}

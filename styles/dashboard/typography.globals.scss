@@ -1,0 +1,191 @@
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.ubuntu {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.urbanist {
+  font-family: "Urbanist", sans-serif;
+}
+
+.crimson_text {
+  font-family: "Crimson Text", serif;
+}
+
+.bold {
+  font-weight: bold !important;
+}
+.lighter {
+  font-weight: 500;
+}
+
+.size_64 {
+  font-size: 6.4rem;
+}
+.size_32-64 {
+  font-size: clamp(3.2rem, 2.6074rem + 1.9753vw, 6.4rem);
+}
+.size_18-64 {
+  font-size: clamp(1.6rem, 0.7111rem + 2.963vw, 6.4rem);
+}
+.size_16-64 {
+  font-size: clamp(1.6rem, 0.7111rem + 2.963vw, 6.4rem);
+}
+
+.size_48 {
+  font-size: 4.8rem;
+}
+.size_24-48 {
+  font-size: clamp(2.4rem, 1.9556rem + 1.4815vw, 4.8rem);
+}
+.size_32-48 {
+  font-size: clamp(3.2rem, 2.9037rem + 0.9877vw, 4.8rem);
+}
+.size_16-48 {
+  font-size: clamp(1.6rem, 1.0074rem + 1.9753vw, 4.8rem);
+}
+
+.size_28-43 {
+  font-size: clamp(2.8rem, 2.4538rem + 1.1538vw, 4.3rem);
+}
+
+.size_32 {
+  font-size: 3.2rem;
+}
+.size_20-32 {
+  font-size: clamp(2rem, 1.7231rem + 0.9231vw, 3.2rem);
+}
+.size_18-32 {
+  font-size: clamp(1.8rem, 1.4769rem + 1.0769vw, 3.2rem);
+}
+.size_16-32 {
+  font-size: clamp(1.6rem, 1.3037rem + 0.9877vw, 3.2rem);
+}
+
+.size_30 {
+  font-size: 3rem;
+}
+
+.size_28 {
+  font-size: 2.8rem;
+}
+.size_22-28 {
+  font-size: clamp(2.2rem, 2.0615rem + 0.4615vw, 2.8rem) !important;
+}
+
+.size_24 {
+  font-size: 2.4rem;
+}
+.size_20_24 {
+  font-size: clamp(2rem, 1.9259rem + 0.2469vw, 2.4rem);
+}
+.size_18-24 {
+  font-size: clamp(1.8rem, 1.6889rem + 0.3704vw, 2.4rem);
+}
+.size_16_24 {
+  font-size: clamp(1.6rem, 1.4519rem + 0.4938vw, 2.4rem);
+}
+.size_14-24 {
+  font-size: clamp(1.4rem, 1.2148rem + 0.6173vw, 2.4rem);
+}
+.size_12-24 {
+  font-size: clamp(1.2rem, 0.9778rem + 0.7407vw, 2.4rem);
+}
+.size_8-24 {
+  font-size: clamp(0.8rem, 0.5037rem + 0.9877vw, 2.4rem);
+}
+
+.size_22 {
+  font-size: 2rem;
+}
+.size_18-22 {
+  font-size: clamp(1.8rem, 1.6839rem + 0.3226vw, 2.2rem);
+}
+
+.size_20 {
+  font-size: 2rem;
+}
+.size_18-20 {
+  font-size: clamp(1.8rem, 1.7538rem + 0.1538vw, 2rem) !important;
+}
+.size_16-20 {
+  font-size: clamp(1.6rem, 1.5259rem + 0.2469vw, 2rem);
+}
+.size_14-20 {
+  font-size: clamp(1.4rem, 1.2889rem + 0.3704vw, 2rem);
+}
+.size_12-20 {
+  font-size: clamp(1.2rem, 1.0519rem + 0.4938vw, 2rem);
+}
+
+.size_18 {
+  font-size: 1.8rem;
+}
+.size_16-18 {
+  font-size: clamp(1.6rem, 1.563rem + 0.1235vw, 1.8rem);
+}
+
+.size_17 {
+  font-size: 1.7rem;
+}
+.size_16-17 {
+  font-size: clamp(1.6rem, 1.5769rem + 0.0769vw, 1.7rem);
+}
+
+.size_16 {
+  font-size: 1.6rem;
+}
+.size_15-16 {
+  font-size: clamp(1.5rem, 1.4769rem + 0.0769vw, 1.6rem);
+}
+.size_14-16 {
+  font-size: clamp(1.4rem, 1.363rem + 0.1235vw, 1.6rem);
+}
+.size_12-16 {
+  font-size: clamp(1.2rem, 1.1259rem + 0.2469vw, 1.6rem);
+}
+.size_11-16 {
+  font-size: clamp(1.1rem, 0.9846rem + 0.3846vw, 1.6rem);
+}
+.size_8-16 {
+  font-size: clamp(0.8rem, 0.6519rem + 0.4938vw, 1.6rem);
+}
+
+.size_15 {
+  font-size: 1.5rem !important;
+}
+.size_14-15 {
+  font-size: clamp(1.4rem, 1.3769rem + 0.0769vw, 1.5rem) !important;
+}
+.size_12-15 {
+  font-size: clamp(1.2rem, 1.1444rem + 0.1852vw, 1.5rem);
+}
+.size_11-15 {
+  font-size: clamp(1.1rem, 1.0077rem + 0.3077vw, 1.5rem);
+}
+
+.size_14 {
+  font-size: 1.4rem;
+}
+.size_12-14 {
+  font-size: clamp(1.2rem, 1.163rem + 0.1235vw, 1.4rem);
+}
+.size_11-14 {
+  font-size: clamp(1.1rem, 1.0308rem + 0.2308vw, 1.4rem);
+}
+
+.size_13 {
+  font-size: 1.2rem;
+}
+.size_13-14 {
+  font-size: clamp(1.3rem, 1.2769rem + 0.0769vw, 1.4rem) !important;
+}
+
+.size_12 {
+  font-size: 1.2rem;
+}
+.size_8-12 {
+  font-size: clamp(0.8rem, 0.7259rem + 0.2469vw, 1.2rem);
+}

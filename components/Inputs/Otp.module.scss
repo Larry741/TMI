@@ -1,0 +1,70 @@
+.phone_auth {
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.4rem;
+}
+
+.form {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(6, minmax(2rem, 1fr));
+	gap: 0.5rem;
+	justify-content: center;
+
+	& .otp_input {
+		height: 5.6rem;
+		border-radius: 1.2rem;
+		border: 0.2rem solid $hover--25;
+		outline: none;
+		text-align: center;
+		caret-color: transparent;
+		font-size: 2rem;
+		margin: 0;
+		padding: 0;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+		&:focus {
+			border-color: var(--primary-color3) !important;
+			border-style: solid;
+			border-width: 1px;
+
+			@include respond(min-width-phones-480) {
+				border-width: 2px;
+			}
+		}
+	}
+
+	.invalid_otp {
+		border-color: $error-500;
+		border-style: solid;
+		border-width: 1px;
+
+		@include respond(min-width-phones-480) {
+			border-width: 2px;
+		}
+	}
+}
+
+.resend_btn {
+	border: none !important;
+	background-color: transparent !important;
+	color: --primary-color7 !important;
+	cursor: pointer;
+	padding: 0 !important;
+	width: max-content;
+
+	&:hover {
+		color: var(--primary-color3) !important;
+	}
+}
+
+.expiry {
+	color: $color-primary--500;
+}
+
+.error {
+	color: $error-500;
+}

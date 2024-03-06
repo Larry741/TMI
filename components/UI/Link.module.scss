@@ -1,0 +1,12 @@
+.link {
+	width: max-content;
+	background-color: transparent;
+	border-radius: 0.8rem;
+	border: 1px solid transparent;
+	cursor: pointer;
+	min-height: $button-height;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 1.6rem;
+}

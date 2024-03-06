@@ -1,0 +1,245 @@
+.swiper-slide-active .slideInRightAnim {
+  animation: slideInRight 1.2s linear, move5 10s infinite 2.2s linear;
+}
+
+.swiper {
+  overflow: visible !important;
+}
+
+.swiper-slide {
+  height: auto !important;
+}
+
+.swiper-pagination {
+  bottom: -0.3rem !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $color-primary--600 !important;
+}
+
+.swiper-no-bottom {
+  & .swiper-pagination {
+    bottom: 0 !important;
+  }
+}
+
+.swiper-no-bottom-1 {
+  & .swiper-pagination {
+    bottom: -0.5rem !important;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes move5 {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+.header_is_fixed {
+  position: fixed;
+  background: linear-gradient(227.3deg, #8a208c 0%, #181b81 100.84%);
+  box-shadow: 1px 1px 5px 0px rgb(0 0 0 / 50%);
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  animation: slideInDown 0.5s ease-out;
+}
+
+.is_dark .header_is_fixed {
+  background: #14141f;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.nav_sm {
+  grid-column: 1 / -1;
+  width: 100%;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  margin-bottom: 1rem;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+  & .nav_control {
+    display: flex;
+    width: max-content;
+    margin-bottom: 0.5rem;
+
+    @include respond(max-width-phones-480) {
+      gap: 0.7rem;
+    }
+    @include respond(min-width-phones-480) {
+      gap: 1.2rem;
+    }
+
+    & > button,
+    & > span {
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      border: none;
+      background-color: transparent;
+      border-radius: 0%;
+      cursor: pointer;
+      gap: 0.5rem;
+      padding: 0 0.8rem 1rem 0.8rem;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      position: relative;
+      color: inherit;
+    }
+  }
+
+  & .activeNav {
+    // color: $color-text--600 !important;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--primary-color3);
+    }
+  }
+}
+
+.header_link {
+  line-height: 1.2;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  & img {
+    height: 4rem;
+    width: 4rem;
+    flex-shrink: 0;
+  }
+
+  & h1 {
+    margin: 0;
+    max-width: 12rem;
+    font-weight: 900 !important;
+    color: white;
+
+    @media only screen and (min-width: 990px) {
+    }
+  }
+
+  &:hover {
+    color: var(--white);
+  }
+}
+
+.stats {
+  margin-top: 6rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  & h2 {
+    margin: 0;
+  }
+
+  & .stats_card {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content max-content max-content;
+    align-items: flex-start;
+    justify-items: left;
+    border-radius: 1.2rem 1.2rem;
+    box-shadow: 0px 2px 4px $outline-100;
+    overflow: hidden;
+    border: 1px solid rgba($color: grey, $alpha: 0.3);
+
+    @include respond(max-width-tablet-750) {
+      gap: 1rem;
+      padding: 2rem 1.5rem;
+    }
+    @include respond(min-width-tablet-750) {
+      gap: 1rem;
+      padding: 2rem 2rem;
+    }
+
+    & > * {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    & h4 {
+      margin: 0;
+    }
+
+    & > span:last-of-type {
+      line-height: 1;
+    }
+  }
+}
+
+.cards_bg_color {
+  background: linear-gradient(
+    227.3deg,
+    rgba(#8a208c, 0.9) 0%,
+    rgba(#181b81, 0.9) 100.84%
+  );
+  color: white;
+}
+
+.is_dark .cards_bg_color {
+  background: rgba(#343444, 0.75);
+}
+
+.margin_max {
+  margin-bottom: 5rem;
+}

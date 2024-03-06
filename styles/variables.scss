@@ -1,0 +1,60 @@
+$color-primary--900: #0d32a0;
+$color-primary--600: #1f51e5;
+$color-primary--500: #2055f3;
+$color-primary--100: #bccbfb;
+$color-primary2-100: #242424;
+$secondary-default--600: #8724a8;
+$secondary-default-400: #9f47bd;
+$color-text--600: rgba(#000000, 0.87);
+$color-text: #a1a0a7;
+$color-text-300-disabled: rgba(#000000, 38%);
+$color-text--200: rgba(#000000, 0.6);
+$secondary-text--200: #ffffff99;
+$primary-bg: #e2e9fd;
+$Primary-bg--25: #f6f7f8;
+$primary-bg--50: #edeff2;
+$primary-bg-dark: #1f2127;
+$secondary-bg-50: #f1e5f5;
+$secondary-bg-25: #fbf8fc;
+$secondary-bg-200: #f8f9fc;
+$tertiary-bg-300: #f1f3f9;
+$tertiary-bg-900: #eaf5fc;
+$error-bg: #ffebee;
+$error-outline--200: #ef9aa8;
+$outline-100: rgba(#000000, 12%);
+$outline-200: #90aaf9;
+$hover--25: #f6f7f8;
+$success--600: #008a45;
+$success--500: #00944a;
+$success--200: #80cba6;
+$success--50: #dff1e8;
+$error-500: #f43454;
+$error-800: #c72943;
+$warning-50: #fff2e0;
+$warning--800: #a16107;
+$warning--500: #fa9200;
+$warning--300: #ffb54d;
+$division--200: rgba(#ffffff, 0.24);
+$selected: rgba(#ffffff, 0.16);
+$selected-gray-900: #252a37;
+$selected-gray-50: #edeff2;
+$dark-white-64: rgba(252, 252, 252, 0.64);
+$dark-theme-100: #fcfcfc;
+
+$input-height-max: 48px;
+$input-height-min: 46px;
+$input-height-small: 45px;
+
+$input-font-size: clamp(
+	14px,
+	14px + (15 - 14) * ((100vw - 300px) / (2000 - 300)),
+	15px
+);
+
+$margin-bottom-l: 55px;
+$margin-bottom-m: 35px;
+
+$button-height: 43px;
+
+$z-index-max: 9999;
+$z-index-min: 999;
