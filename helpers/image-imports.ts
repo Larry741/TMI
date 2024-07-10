@@ -38,10 +38,13 @@ import jointAccountIcon from "@/public/images/joint_account_icon.svg";
 import transactionsIcons from "@/public/images/admin_transactions.svg";
 import withdrawalIcon from "@/public/images/admin_withdrawal_icon.svg";
 
+import dummyTestimonialImg from "@/public/images/dummy_testimonial_img.png";
+
 export {
 	editIcon,
 	returnAngleIcon,
 	checkIcon,
+	dummyTestimonialImg,
 	exclamationIcon,
 	errorIcon,
 	moneyBag,

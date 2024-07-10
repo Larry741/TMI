@@ -1,0 +1,202 @@
+[
+	{
+		"category": "General",
+		"question": "What is this platform?",
+		"answer": "This platform is a comprehensive trading platform that allows you to trade cryptocurrencies, stocks, and commodities."
+	},
+	{
+		"category": "General",
+		"question": "How do I create an account?",
+		"answer": "You can create an account by clicking on the 'Sign Up' button on the homepage and following the instructions."
+	},
+	{
+		"category": "General",
+		"question": "Is the platform secure?",
+		"answer": "Yes, we use advanced security measures to ensure that your data and funds are safe."
+	},
+	{
+		"category": "General",
+		"question": "What are the trading hours?",
+		"answer": "Our platform operates 24/7 for cryptocurrencies. Stock and commodities trading follow the respective market hours."
+	},
+	{
+		"category": "General",
+		"question": "What fees do you charge?",
+		"answer": "We charge a small fee for each trade. You can find the detailed fee structure on our 'Fees' page."
+	},
+	{
+		"category": "General",
+		"question": "How can I contact customer support?",
+		"answer": "You can contact customer support via our 'Contact Us' page or through the live chat feature on the platform."
+	},
+	{
+		"category": "General",
+		"question": "Can I use the platform on mobile?",
+		"answer": "Yes, our platform is mobile-friendly and can be accessed via web browsers on any device."
+	},
+	{
+		"category": "General",
+		"question": "What are the accepted payment methods?",
+		"answer": "We accept various payment methods including bank transfers, credit/debit cards, and popular cryptocurrencies."
+	},
+	{
+		"category": "General",
+		"question": "Do you offer demo accounts?",
+		"answer": "Yes, we offer demo accounts for users to practice trading without risking real money."
+	},
+	{
+		"category": "General",
+		"question": "How can I reset my password?",
+		"answer": "You can reset your password by clicking on the 'Forgot Password' link on the login page and following the instructions."
+	},
+	{
+		"category": "Investment",
+		"question": "What types of investments can I make on this platform?",
+		"answer": "You can invest in cryptocurrencies, stocks, and commodities on our platform."
+	},
+	{
+		"category": "Investment",
+		"question": "How do I start investing?",
+		"answer": "To start investing, create an account, deposit funds, and choose the asset you want to invest in."
+	},
+	{
+		"category": "Investment",
+		"question": "What is the minimum investment amount?",
+		"answer": "The minimum investment amount varies by asset. Please check the specific asset page for more details."
+	},
+	{
+		"category": "Investment",
+		"question": "How do I track my investments?",
+		"answer": "You can track your investments through the 'Portfolio' section of your account dashboard."
+	},
+	{
+		"category": "Investment",
+		"question": "Can I invest in multiple assets at once?",
+		"answer": "Yes, you can diversify your portfolio by investing in multiple assets simultaneously."
+	},
+	{
+		"category": "Investment",
+		"question": "What are the risks of investing?",
+		"answer": "Investing involves risks, including the loss of principal. It is important to research and understand the risks before investing."
+	},
+	{
+		"category": "Investment",
+		"question": "How can I learn more about investing?",
+		"answer": "We offer educational resources and articles on our platform to help you learn more about investing."
+	},
+	{
+		"category": "Investment",
+		"question": "Are there any fees for investing?",
+		"answer": "We charge a small fee for each transaction. Please refer to our 'Fees' page for detailed information."
+	},
+	{
+		"category": "Investment",
+		"question": "Can I automate my investments?",
+		"answer": "Yes, we offer automated investment options and tools to help you manage your investments."
+	},
+	{
+		"category": "Investment",
+		"question": "How do I sell my investments?",
+		"answer": "You can sell your investments through the 'Sell' option in your portfolio dashboard."
+	},
+	{
+		"category": "Wallet",
+		"question": "How do I set up a wallet?",
+		"answer": "Your wallet is automatically created when you sign up. You can access it through your account dashboard."
+	},
+	{
+		"category": "Wallet",
+		"question": "How do I deposit funds into my wallet?",
+		"answer": "You can deposit funds by selecting the 'Deposit' option in your wallet and following the instructions."
+	},
+	{
+		"category": "Wallet",
+		"question": "What currencies are supported in the wallet?",
+		"answer": "Our wallet supports a variety of cryptocurrencies as well as fiat currencies like USD, EUR, and GBP."
+	},
+	{
+		"category": "Wallet",
+		"question": "Is my wallet secure?",
+		"answer": "Yes, we use advanced security measures, including encryption and two-factor authentication, to protect your wallet."
+	},
+	{
+		"category": "Wallet",
+		"question": "How do I transfer funds from my wallet?",
+		"answer": "You can transfer funds by selecting the 'Transfer' option and entering the recipient's details."
+	},
+	{
+		"category": "Wallet",
+		"question": "Are there any fees for using the wallet?",
+		"answer": "There may be small transaction fees for deposits, withdrawals, and transfers. Please check our 'Fees' page for more details."
+	},
+	{
+		"category": "Wallet",
+		"question": "Can I link my wallet to external accounts?",
+		"answer": "Yes, you can link your wallet to external accounts and wallets for easier fund transfers."
+	},
+	{
+		"category": "Wallet",
+		"question": "What should I do if my wallet is compromised?",
+		"answer": "If you suspect your wallet is compromised, contact customer support immediately to secure your account."
+	},
+	{
+		"category": "Wallet",
+		"question": "How do I view my transaction history?",
+		"answer": "You can view your transaction history in the 'History' section of your wallet dashboard."
+	},
+	{
+		"category": "Wallet",
+		"question": "Can I use my wallet for payments?",
+		"answer": "Yes, you can use your wallet to make payments to supported merchants and services."
+	},
+	{
+		"category": "Withdrawal",
+		"question": "How do I withdraw funds?",
+		"answer": "To withdraw funds, go to your wallet, select 'Withdraw', and follow the instructions to transfer funds to your bank account or external wallet."
+	},
+	{
+		"category": "Withdrawal",
+		"question": "What are the withdrawal fees?",
+		"answer": "Withdrawal fees vary depending on the currency and method. Please refer to our 'Fees' page for detailed information."
+	},
+	{
+		"category": "Withdrawal",
+		"question": "How long does it take to process a withdrawal?",
+		"answer": "Withdrawal processing times vary by method, typically ranging from a few minutes to several business days."
+	},
+	{
+		"category": "Withdrawal",
+		"question": "What is the minimum withdrawal amount?",
+		"answer": "The minimum withdrawal amount depends on the currency. Please check the 'Withdrawal' section of your account for specifics."
+	},
+	{
+		"category": "Withdrawal",
+		"question": "Can I cancel a withdrawal request?",
+		"answer": "Once a withdrawal request is initiated, it cannot be canceled. Please ensure you enter the correct details before confirming."
+	},
+	{
+		"category": "Withdrawal",
+		"question": "Are there any limits on withdrawals?",
+		"answer": "Yes, there may be daily or monthly limits on withdrawals. Please check your account settings for more information."
+	},
+	{
+		"category": "Withdrawal",
+		"question": "How do I add a new withdrawal method?",
+		"answer": "You can add a new withdrawal method by going to the 'Withdrawal Methods' section in your account settings and following the instructions."
+	},
+	{
+		"category": "Withdrawal",
+		"question": "What should I do if my withdrawal is delayed?",
+		"answer": "If your withdrawal is delayed, please contact customer support for assistance."
+	},
+	{
+		"category": "Withdrawal",
+		"question": "Can I withdraw funds to a different account?",
+		"answer": "Yes, you can withdraw funds to any verified account or external wallet linked to your profile."
+	},
+	{
+		"category": "Withdrawal",
+		"question": "What currencies can I withdraw?",
+		"answer": "You can withdraw funds in various supported currencies, including cryptocurrencies and fiat currencies like USD, EUR, and GBP."
+	}
+]

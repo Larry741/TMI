@@ -1,20 +1,167 @@
-.section {
-  padding: 60px 0;
-  background: var(--bg-section);
-  @include contentSidePadding;
+.faq {
+	@include contentSidePadding;
+	background-color: var(--bg-section);
 
-  & .question {
-    max-width: 75rem;
-    text-align: center;
-    margin: 3rem auto 4rem;
-  }
+	&_control {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		@include contentWidth;
 
-  & .navbar {
-    margin: 0 auto 2rem;
-    display: flex;
+		@include respond(max-width-tablet-750) {
+			padding: 5rem 0;
+			gap: 0rem;
+		}
+		@include respond(min-width-tablet-750) {
+			padding: 6rem 0;
+			gap: 3rem;
+		}
 
-    @media only screen and (min-width: 410px) {
-      justify-content: center;
-    }
-  }
+		@include respond(max-width-notebook-1015) {
+			grid-template-columns: 1fr;
+		}
+
+		& .heading {
+			position: relative;
+
+			& > div {
+				position: sticky;
+				top: 8rem;
+				margin: 0;
+
+				@include respond(max-width-notebook-1015) {
+					text-align: center;
+				}
+
+				@include respond(min-width-notebook-1015) {
+					max-width: 34rem;
+				}
+			}
+		}
+
+		& .questions {
+			display: flex;
+			flex-direction: column;
+
+			@include respond(min-width-tablet-750) {
+				gap: 0.5rem;
+			}
+
+			& .redirect {
+				padding: 2rem 0 0;
+
+				& a {
+					background-color: #132355;
+					padding: 1.5rem 3rem;
+					border-radius: 1rem;
+				}
+			}
+		}
+	}
+}
+
+.question {
+	border-radius: 1.2rem;
+	transition: 0.4s all;
+	border: 1px solid transparent;
+
+	@include respond(min-width-tablet-750) {
+		&:hover {
+			background-color: var(--primary-color5);
+		}
+	}
+
+	& .btn_control {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@include respond(max-width-tablet-750) {
+			padding: 1rem 0;
+			gap: 1rem;
+		}
+		@include respond(min-width-tablet-750) {
+			padding: 1.5rem 1.3rem;
+			gap: 2rem;
+		}
+
+		& button {
+			border: none;
+			background: transparent;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			padding: 0;
+
+			&:hover {
+				color: white;
+			}
+		}
+	}
+
+	& .dropdown {
+		max-height: 0;
+		overflow: hidden;
+
+		@include respond(max-width-tablet-750) {
+			padding: 0rem 0rem 0;
+		}
+		@include respond(min-width-tablet-750) {
+			padding: 0rem 3rem 0 1.3rem;
+		}
+
+		& > p {
+			margin: 0 0 1.5rem;
+		}
+	}
+}
+
+.open_list {
+	animation: open 0.3s ease-in-out forwards;
+}
+
+.close_list {
+	animation: close 0.3s ease-in-out forwards;
+}
+
+@keyframes open {
+	from {
+		max-height: 0;
+	}
+	to {
+		max-height: 10rem;
+	}
+}
+@keyframes close {
+	from {
+		max-height: 10rem;
+	}
+	to {
+		max-height: 0;
+	}
+}
+
+.rotate_0 {
+	animation: rotate 0.3s ease forwards;
+}
+
+.rotate_360 {
+	animation: reverse_rotate 0.3s ease forwards;
+}
+
+@keyframes rotate {
+	from {
+		transform: rotateZ(0deg);
+	}
+	to {
+		transform: rotateZ(180deg);
+	}
+}
+@keyframes reverse_rotate {
+	from {
+		transform: rotateZ(180deg);
+	}
+	to {
+		transform: rotateZ(0deg);
+	}
 }

@@ -116,12 +116,12 @@ const Header = () => {
 									id={`${docWidth > 990 ? "main-nav" : "main-nav-mobi"}`}
 									className={`${styles.nav} ${styles.collapse_nav} main-nav`}>
 									<ul id="menu-primary-menu" className={`${styles.menu} menu`}>
-										<li
+										{/* <li
 											className={`${styles.menu_item} ${
 												path === "/home" ? styles.active_nav : ""
 											} menu-item current-menu-item`}>
 											<Link href={"/home"}>Home</Link>
-										</li>
+										</li> */}
 										<li
 											className={`${styles.menu_item} ${
 												path === "/market" ? styles.active_nav : ""
@@ -140,12 +140,12 @@ const Header = () => {
 											} menu-item current-menu-item`}>
 											<Link href="/about">About Us</Link>
 										</li>
-										<li
+										{/* <li
 											className={`${styles.menu_item} ${
 												path === "/terms" ? styles.active_nav : ""
 											} menu-item current-menu-item`}>
 											<Link href="/terms">Terms of Use</Link>
-										</li>
+										</li> */}
 									</ul>
 								</nav>
 

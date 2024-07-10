@@ -1,158 +1,97 @@
-import { useMemo, useState } from "react";
+import { FaAngleDown } from "react-icons/fa";
+import faqs from "@/faqs.json";
+import Link from "next/link";
+
 import styles from "./Faq.module.scss";
-import FaqItem from "./FaqItem";
-import { Poppins, Work_Sans } from "next/font/google";
 
-type FaqNavTypes = "general" | "investments" | "withdrawal" | "referral";
-
-export interface FaqQuestion {
-	title: string;
-	answer: string;
-}
-
-const ft = Poppins({
-	subsets: ["latin"],
-	display: "swap",
-	weight: ["300", "400", "700"],
-});
-
-const FaqSection = () => {
-	const [faqNavState, setFaqNavState] = useState<FaqNavTypes>("general");
-
-	const selectedFaq = useMemo(() => {
-		if (faqNavState === "general") {
-			return generalFaqList;
-		} else if (faqNavState === "investments") {
-			return investmentFaqList;
-		} else if (faqNavState === "referral") {
-			return referralFaqList;
-		} else {
-			return withdrawalFaqList;
-		}
-	}, [faqNavState]);
-
+const Faq = () => {
 	return (
-		<section className={`${styles.section} col-md-12`}>
-			<h2 className="tf-title size_30-36">FAQ</h2>
-			<div className="heading-line margin_max"></div>
+		<div className={styles.faq}>
+			<div className={styles.faq_control}>
+				<div className={styles.heading}>
+					<div className="col-md-12 margin_max">
+						<h2 style={{ textAlign: "center" }} className="pb-12 size_30-36">
+							Frequently asked Questions
+						</h2>
 
-			<div className={`${styles.question} ${ft.className} size_15_18`}>
-				Have questions? Explore our frequently asked questions to find answers
-				and gain a deeper understanding of our Platform.
-			</div>
-
-			<nav className={`${styles.navbar} nav_sm  bold`}>
-				<div className={"nav_control size_16_24"}>
-					<button
-						className={faqNavState === "general" ? "activeNav" : undefined}
-						disabled={faqNavState === "general"}
-						onClick={() => setFaqNavState("general")}>
-						General
-					</button>
-					<button
-						className={faqNavState === "investments" ? "activeNav" : undefined}
-						disabled={faqNavState === "investments"}
-						onClick={() => setFaqNavState("investments")}>
-						Investments
-					</button>
-					<button
-						className={faqNavState === "withdrawal" ? "activeNav" : undefined}
-						disabled={faqNavState === "withdrawal"}
-						onClick={() => setFaqNavState("withdrawal")}>
-						Withdrawal
-					</button>
-					<button
-						className={faqNavState === "referral" ? "activeNav" : undefined}
-						disabled={faqNavState === "referral"}
-						onClick={() => setFaqNavState("referral")}>
-						Referral
-					</button>
+						<div className="heading-line"></div>
+					</div>
 				</div>
-			</nav>
 
-			<div className={styles.faq_item_control}>
-				{selectedFaq.map((faq, idx) => {
-					return <FaqItem key={idx} faq={faq} />;
-				})}
+				<div className={styles.questions}>
+					{faqs.map((faq, idx) => {
+						if (idx > 7) {
+							return <></>;
+						}
+
+						return (
+							<div className={styles.question} key={`${faq.question}${idx}`}>
+								<div className={styles.btn_control}>
+									<span className="size_17">{faq.question}</span>
+
+									<button onClick={toggleFaqDropdown}>
+										<FaAngleDown size={14} />
+									</button>
+								</div>
+
+								<div className={`${styles.dropdown}`}>
+									<p className="size_16">{faq.answer}</p>
+								</div>
+							</div>
+						);
+					})}
+
+					<div className={styles.redirect}>
+						{/* <Link className="size_14" href={PAGES.FAQ}>
+							Browse FAQ&apos;S
+						</Link> */}
+					</div>
+				</div>
 			</div>
-		</section>
+		</div>
 	);
 };
 
-export default FaqSection;
+export default Faq;
 
-const generalFaqList = [
-	{
-		title: "How do I become a member",
-		answer: `Simply click the Sign Up button, fill out the form and that's it.`,
-	},
-	{
-		title: "How can I make money with Top Metro Investment?",
-		answer: `You can make money by investing in our `,
-	},
-	{
-		title: "How do I get started with ShareOwnership?",
-		answer: `At Top Metro Investments, we believe that everyone should have the opportunity to invest in real estate and build their financial future. We understand the complexities that often deter potential investors, and we're here to simplify them.`,
-	},
-	{
-		title: "How do I get started with ShareOwnership?",
-		answer: `At Top Metro Investments, we believe that everyone should have the opportunity to invest in real estate and build their financial future. We understand the complexities that often deter potential investors, and we're here to simplify them.`,
-	},
-];
+export const toggleFaqDropdown = (
+	e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+) => {
+	const toggleBtn = e.currentTarget.closest("button") as HTMLButtonElement;
+	const dropdown = toggleBtn.parentElement
+		?.nextElementSibling as HTMLDivElement;
 
-const investmentFaqList = [
-	{
-		title: "How do I get started with ShareOwnership?",
-		answer: `At Top Metro Investments, we believe that everyone should have the opportunity to invest in real estate and build their financial future. We understand the complexities that often deter potential investors, and we're here to simplify them.`,
-	},
-	{
-		title: "How do I get started with ShareOwnership?",
-		answer: `At Top Metro Investments, we believe that everyone should have the opportunity to invest in real estate and build their financial future. We understand the complexities that often deter potential investors, and we're here to simplify them.`,
-	},
-	{
-		title: "How do I get started with ShareOwnership?",
-		answer: `At Top Metro Investments, we believe that everyone should have the opportunity to invest in real estate and build their financial future. We understand the complexities that often deter potential investors, and we're here to simplify them.`,
-	},
-	{
-		title: "How do I get started with ShareOwnership?",
-		answer: `At Top Metro Investments, we believe that everyone should have the opportunity to invest in real estate and build their financial future. We understand the complexities that often deter potential investors, and we're here to simplify them.`,
-	},
-];
+	if (dropdown?.classList.contains(styles.open_list)) {
+		const dropdowns = document.querySelectorAll(
+			`.${styles.open_list}`
+		) as NodeListOf<Element>;
 
-const withdrawalFaqList = [
-	{
-		title: "How do I get started with ShareOwnership?",
-		answer: `At Top Metro Investments, we believe that everyone should have the opportunity to invest in real estate and build their financial future. We understand the complexities that often deter potential investors, and we're here to simplify them.`,
-	},
-	{
-		title: "How do I get started with ShareOwnership?",
-		answer: `At Top Metro Investments, we believe that everyone should have the opportunity to invest in real estate and build their financial future. We understand the complexities that often deter potential investors, and we're here to simplify them.`,
-	},
-	{
-		title: "How do I get started with ShareOwnership?",
-		answer: `At Top Metro Investments, we believe that everyone should have the opportunity to invest in real estate and build their financial future. We understand the complexities that often deter potential investors, and we're here to simplify them.`,
-	},
-	{
-		title: "How do I get started with ShareOwnership?",
-		answer: `At Top Metro Investments, we believe that everyone should have the opportunity to invest in real estate and build their financial future. We understand the complexities that often deter potential investors, and we're here to simplify them.`,
-	},
-];
+		Array.from(dropdowns).forEach((drop) => {
+			drop.classList.replace(styles.open_list, styles.close_list);
+		});
 
-const referralFaqList = [
-	{
-		title: "How do I get started with ShareOwnership?",
-		answer: `At Top Metro Investments, we believe that everyone should have the opportunity to invest in real estate and build their financial future. We understand the complexities that often deter potential investors, and we're here to simplify them.`,
-	},
-	{
-		title: "How do I get started with ShareOwnership?",
-		answer: `At Top Metro Investments, we believe that everyone should have the opportunity to invest in real estate and build their financial future. We understand the complexities that often deter potential investors, and we're here to simplify them.`,
-	},
-	{
-		title: "How do I get started with ShareOwnership?",
-		answer: `At Top Metro Investments, we believe that everyone should have the opportunity to invest in real estate and build their financial future. We understand the complexities that often deter potential investors, and we're here to simplify them.`,
-	},
-	{
-		title: "How do I get started with ShareOwnership?",
-		answer: `At Top Metro Investments, we believe that everyone should have the opportunity to invest in real estate and build their financial future. We understand the complexities that often deter potential investors, and we're here to simplify them.`,
-	},
-];
+		toggleBtn.classList.replace(styles.rotate_0, styles.rotate_360);
+	} else {
+		const dropdowns = document.querySelectorAll(
+			`.${styles.open_list}`
+		) as NodeListOf<Element>;
+
+		Array.from(dropdowns).forEach((drop) => {
+			drop.classList.replace(styles.open_list, styles.close_list);
+		});
+
+		dropdown.classList.remove(styles.close_list);
+		dropdown?.classList.add(styles.open_list);
+
+		const dropBtns = document.querySelectorAll(
+			`.${styles.rotate_0}`
+		) as NodeListOf<Element>;
+
+		Array.from(dropBtns).forEach((drop) => {
+			drop.classList.replace(styles.rotate_0, styles.rotate_360);
+		});
+
+		toggleBtn.classList.remove(styles.rotate_360);
+		toggleBtn.classList.add(styles.rotate_0);
+	}
+};
